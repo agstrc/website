@@ -9,8 +9,7 @@ date = "2021-05-21"
 Sou um desenvolvedor de software, interessado principalmente em tecnologias
 server-side, como Linux e Docker além de linguagens de programação como Go e Rust.
 
-Atualmente trabalho como desenvolvedor backend, usando principalmente Python como
-linguagem principal.
+Atualmente trabalho como desenvolvedor backend, usando Python como linguagem principal.
 
 ## Formação Acadêmica
 
