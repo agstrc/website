@@ -1,0 +1,23 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Davi Augusto'
+theme = 'cli-portfolio'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+pagination.pagerSize = 5
+
+[languages]
+[languages.en]
+languageName = 'English'
+weight = 1
+contentDir = 'content'
+[languages.pt]
+languageName = 'Português'
+weight = 2
+contentDir = 'content/pt'
+languageCode = 'pt-br'
+
+[params]
+github = "https://github.com/ddd"
+linkedin = "https://www.linkedin.com/in/your-linkedin-username"
+opengraphDescription = "Davi Augusto - Software developer"

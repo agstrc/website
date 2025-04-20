@@ -1,0 +1,13 @@
+{{/*
+  Language Switcher Partial (always show both languages, highlight current)
+*/}}
+
+{{ $currentLang := .Site.Language.Lang }}
+<div class="lang-switcher">
+  <a href="{{ if eq $currentLang "en" }}{{ .RelPermalink }}{{ else }}{{ replace .RelPermalink "/pt" "" 1 }}{{ end }}"
+     class="lang-btn{{ if eq $currentLang "en" }} selected{{ end }}"
+     aria-current="{{ if eq $currentLang "en" }}true{{ end }}">en</a>
+  <a href="{{ if eq $currentLang "pt" }}{{ .RelPermalink }}{{ else }}/pt{{ .RelPermalink }}{{ end }}"
+     class="lang-btn{{ if eq $currentLang "pt" }} selected{{ end }}"
+     aria-current="{{ if eq $currentLang "pt" }}true{{ end }}">ptbr</a>
+</div>

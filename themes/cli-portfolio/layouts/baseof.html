@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+  {{/* OpenGraph description for home page */}}
+  {{ if .IsHome }}
+    <meta property="og:description" content="{{ with .Site.Params.opengraphDescription }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:title" content="{{ .Site.Title }}">
+  {{ else if .IsPage }}
+    {{ with .Description }}
+      <meta property="og:description" content="{{ . }}">
+    {{ end }}
+    <meta property="og:title" content="{{ .Title }}">
+  {{ end }}
+</head>
+<body>
+  <header>
+    {{ partial "header.html" . }}
+    {{ partial "language-switcher.html" . }}
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>

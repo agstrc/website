@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ $paginator := .Paginate .Pages }}
+  {{ range $paginator.Pages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+    <p>
+      <a href="{{ .RelPermalink }}" class="read-more">
+        {{ if eq .Site.Language.Lang "pt" }}Leia mais &rarr;{{ else }}Read more &rarr;{{ end }}
+      </a>
+    </p>
+  {{ end }}
+  {{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination">
+      {{ if $paginator.HasPrev }}
+        <a class="prev" href="{{ $paginator.Prev.URL }}">&laquo; Prev</a>
+      {{ end }}
+      {{ range $i, $p := $paginator.Pagers }}
+        <a href="{{ $p.URL }}" class="{{ if eq $p $paginator }}active{{ end }}">{{ add $i 1 }}</a>
+      {{ end }}
+      {{ if $paginator.HasNext }}
+        <a class="next" href="{{ $paginator.Next.URL }}">Next &raquo;</a>
+      {{ end }}
+    </nav>
+  {{ end }}
+{{ end }}
