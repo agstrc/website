@@ -80,13 +80,44 @@ main {
   box-shadow: 0 0 8px #0008;
 }
 
-code,
-pre {
+/* Inline code styling */
+code {
   background: #111;
   color: #7fffd4;
   border-radius: 4px;
   padding: 0.2em 0.4em;
   font-size: 1em;
+}
+
+/* Code block styling */
+pre {
+  background: #111;
+  color: #7fffd4;
+  border-radius: 4px;
+  padding: 0.8em;
+  font-size: 1em;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+blockquote {
+  background: #111;
+  border-left: 4px solid #7fffd4;
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-radius: 0 4px 4px 0;
+  color: #d0d0d0;
+  font-style: italic;
+  position: relative;
+}
+
+blockquote p {
+  margin: 0;
 }
 
 ul,
@@ -132,6 +163,18 @@ ol {
   stroke-width: 2.2;
   width: 30px;
   height: 30px;
+}
+.social-links .email-contact {
+  display: inline-flex;
+  align-items: center;
+  color: #7fffd4;
+  background: #222;
+  border: 1px solid #7fffd4;
+  border-radius: 4px;
+  padding: 0.3em 0.7em;
+  font-size: 1.1em;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  text-decoration: none;
 }
 
 .read-more {
